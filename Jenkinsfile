@@ -29,7 +29,7 @@ pipeline
         }
         stage('Send response to other stages'){
             steps{
-                
+                echo "Response: ${env.PRUEBA}"
                 sh 'python3 scripts/test.py'
             }
         }
