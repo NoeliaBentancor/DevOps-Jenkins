@@ -18,7 +18,7 @@ pipeline
         {
             steps 
             {
-                sh 'python/scripts/blackout-test.py'
+                sh 'python scripts/blackout-test.py'
                 echo 'Testing...'
             }
         }
