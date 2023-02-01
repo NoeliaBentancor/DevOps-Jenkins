@@ -1,2 +1,7 @@
 import os
-print(os.getenv("PRUEBA"))
+
+def test():
+    print(os.getenv("PRUEBA"))
+    return "ok"
+
+test()

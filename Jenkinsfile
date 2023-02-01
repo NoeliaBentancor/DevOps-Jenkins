@@ -19,6 +19,9 @@ pipeline
             steps 
             {
                 sh 'python3 scripts/blackout-test.py'
+                script{
+                    env.PRUEBA="hola2"
+                }
                 echo 'Testing...'
             }
         }
