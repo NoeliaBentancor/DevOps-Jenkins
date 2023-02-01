@@ -18,16 +18,14 @@ pipeline
         {
             steps 
             {
-                sh 'python scripts/blackout-test.py'
+                sh 'python3 scripts/blackout-test.py'
                 echo 'Testing...'
             }
         }
         stage('Send response to other stages'){
             steps{
                 
-                script{
-                    currentBuild.result = 'SUCCESS'
-                }
+                sh 'python3 scripts/test.py'
             }
         }
         stage('Deploy') 
