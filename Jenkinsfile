@@ -17,12 +17,14 @@ pipeline
             steps 
             {
                 //save in a variable result of script blackout test
+                //save in a variable the RESULT of python script
+                //save in a variable the RESULT of python script
                 script{
-                    def version_numbers = bat(script: 'python3 scripts/test.py', returnStdout: true)
+                    def version_numbers = sh(script: 'python3 scripts/test.py', returnStdout: true)
 
-                    env.PRUEBA = warName
+                    env.PRUEBA = version_numbers
                 }
-
+             
                 
                
                 echo 'Testing...'
