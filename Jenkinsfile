@@ -1,9 +1,7 @@
 pipeline 
 {
     agent any
-    environment{
-        //variable to save the result of the script blackout-test.py
-       }
+    
     stages 
     
     {
