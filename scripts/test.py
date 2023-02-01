@@ -1,7 +1,7 @@
-import os
+import os,sys
 
 def test():
     print("2")
     return "FUNCIONA"
 
-test()
+test(*sys.argv[1:])
