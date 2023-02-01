@@ -1,6 +1,6 @@
 import os
 
 def test():
-    return "ok"
+    return "FUNCIONA"
 
 test()

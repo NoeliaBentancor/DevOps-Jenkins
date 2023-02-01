@@ -18,8 +18,10 @@ pipeline
             {
                 //save in a variable result of script blackout test
                 script{
-                    env.PRUEBA=sh(script: 'python3 scripts/test.py', returnStdout: true)
+                    PRUEBAA=sh(script: 'python3 scripts/test.py', returnStdout: true)
                 }
+
+                env.PRUEBA = PRUEBAA
                
                 echo 'Testing...'
             }
