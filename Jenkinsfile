@@ -2,7 +2,7 @@ pipeline
 {
     agent any
     environment{
-        HOLA="hola"
+        PRUEBA="hola"
     }
     stages 
     
