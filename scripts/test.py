@@ -2,7 +2,7 @@ import os,sys
 PRUEBA= os.getenv("PRUEBA")
 def test():
     print("2")
-    print(PRUEBA)
+    print("env variable",PRUEBA)
     return "FUNCIONA"
 
 
