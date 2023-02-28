@@ -3,6 +3,9 @@ pipeline
     agent any
     environment{
         FORMAT_TIMESTAMP="%Y-%m-%dT%H:%M:%S.%fZ"
+        MODULES_IGNORED_LOGGING="requests,urllib3"
+        REQUEST_MODULE="requests"
+        URL_LIB_MODULE="urllib3"
     }
     stages 
     
