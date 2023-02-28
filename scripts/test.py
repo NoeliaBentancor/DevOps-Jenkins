@@ -27,6 +27,8 @@ def configure_logging():
 
 def test():
         configure_logging()
+        logging.getLogger('requests').setLevel(logging.CRITICAL)
+
         print(2)
         # Define the URL of the dummy page
         url = "https://www.example.com"
