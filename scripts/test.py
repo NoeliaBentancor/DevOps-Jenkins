@@ -25,6 +25,10 @@ def configure_logging():
     handler.setFormatter(formatter)
     root.addHandler(handler)
 
+    request_handler = logging.getLogger('requests')
+    request_handler.setLevel(logging.CRITICAL)
+    request_handler.addHandler(handler)
+
 def test():
         configure_logging()
 
