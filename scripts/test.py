@@ -16,6 +16,7 @@ class JsonFormatter(logging.Formatter):
         return json.dumps(json_record)
 
 def configure_logging():
+    logging.getLogger('requests').setLevel(logging.WARNING)
     root = logging.getLogger()
     root.setLevel(logging.DEBUG)
     handler = logging.StreamHandler(sys.stdout)
@@ -23,11 +24,9 @@ def configure_logging():
     formatter = JsonFormatter()
     handler.setFormatter(formatter)
     root.addHandler(handler)
-    logging.getLogger('requests').setLevel(logging.CRITICAL)
 
 def test():
-        # configure_logging()
-        logging.getLogger('requests').setLevel(logging.WARNING)
+        configure_logging()
 
         print(2)
         # Define the URL of the dummy page
