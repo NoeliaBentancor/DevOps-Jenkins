@@ -17,6 +17,7 @@ class JsonFormatter(logging.Formatter):
         return json.dumps(json_record)
 
 def configure_logging():
+    print(FORMAT_TIMESTAMP)
     logging.getLogger('requests').propagate = False
     logging.getLogger('urllib3').propagate = False
     root = logging.getLogger()
