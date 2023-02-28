@@ -27,7 +27,7 @@ def configure_logging():
 
 def test():
         configure_logging()
-        logging.getLogger('requests').setLevel(logging.CRITICAL)
+        logging.getLogger('requests').setLevel(logging.WARNING)
 
         print(2)
         # Define the URL of the dummy page
