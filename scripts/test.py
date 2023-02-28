@@ -16,7 +16,8 @@ class JsonFormatter(logging.Formatter):
         return json.dumps(json_record)
 
 def configure_logging():
-    logging.getLogger('requests').setLevel(logging.WARNING)
+    logging.getLogger('requests').propagate = False
+    logging.getLogger('urllib3').propagate = False
     root = logging.getLogger()
     root.setLevel(logging.DEBUG)
     handler = logging.StreamHandler(sys.stdout)
@@ -25,9 +26,7 @@ def configure_logging():
     handler.setFormatter(formatter)
     root.addHandler(handler)
 
-    request_handler = logging.getLogger('requests')
-    request_handler.setLevel(logging.CRITICAL)
-    request_handler.addHandler(handler)
+
 
 def test():
         configure_logging()
