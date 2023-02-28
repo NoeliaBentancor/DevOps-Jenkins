@@ -4,7 +4,8 @@ import requests
 import logging
 import json, logging, sys,os
 from datetime import datetime
-FORMAT_TIMESTAMP="%Y-%m-%dT%H:%M:%S.%fZ"
+FORMAT_TIMESTAMP=os.getenv("FORMAT_TIMESTAMP")
+
 class JsonFormatter(logging.Formatter):
     def format(self, record):
         extra = getattr(record, "__dict__", {})

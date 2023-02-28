@@ -1,7 +1,9 @@
 pipeline 
 {
     agent any
-    
+    environment{
+        FORMAT_TIMESTAMP="%Y-%m-%dT%H:%M:%S.%fZ"
+    }
     stages 
     
     {
