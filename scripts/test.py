@@ -30,6 +30,7 @@ def configure_logging():
 
 def test():
         configure_logging()
+        logging.info("Hello world!")
 
         print(2)
         # Define the URL of the dummy page
