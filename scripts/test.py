@@ -2,7 +2,8 @@ import os,sys
 PRUEBA= os.getenv("PRUEBA")
 import requests
 import logging
-import json, logging, sys, datetime,os
+import json, logging, sys,os
+from datetime import datetime
 FORMAT_TIMESTAMP= os.getenv("FORMAT_TIMESTAMP")
 class JsonFormatter(logging.Formatter):
     def format(self, record):
