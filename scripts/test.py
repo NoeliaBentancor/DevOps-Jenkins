@@ -1,7 +1,31 @@
 import os,sys
 PRUEBA= os.getenv("PRUEBA")
 import requests
+import logging
+import json, logging, sys, datetime,os
+FORMAT_TIMESTAMP= os.getenv("FORMAT_TIMESTAMP")
+class JsonFormatter(logging.Formatter):
+    def format(self, record):
+        extra = getattr(record, "__dict__", {})
+        json_record = {
+            "timestamp": datetime.now().strftime(FORMAT_TIMESTAMP),
+            "level": getattr(record, "levelname", None),
+            "message": getattr(record, "msg", None)
+        }
+        return json.dumps(json_record)
+
+def configure_logging():
+    root = logging.getLogger()
+    root.setLevel(logging.DEBUG)
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setLevel(logging.DEBUG)
+    formatter = JsonFormatter()
+    handler.setFormatter(formatter)
+    root.addHandler(handler)
+    logging.getLogger('requests').setLevel(logging.CRITICAL)
+
 def test():
+        configure_logging()
         print(2)
         # Define the URL of the dummy page
         url = "https://www.example.com"
