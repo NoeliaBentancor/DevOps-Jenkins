@@ -17,7 +17,7 @@ class JsonFormatter(logging.Formatter):
 
 def configure_logging():
     logging.getLogger('requests').propagate = False
-    # logging.getLogger('urllib3').propagate = False
+    logging.getLogger('urllib3').propagate = False
     root = logging.getLogger()
     root.setLevel(logging.DEBUG)
     handler = logging.StreamHandler(sys.stdout)
