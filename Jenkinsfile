@@ -16,9 +16,6 @@ pipeline
         {
             steps 
             {
-                //save in a variable result of script blackout test
-                //save in a variable the RESULT of python script
-                //save in a variable the RESULT of python script
                 script{
                     def version_numbers = sh(script: 'python3 scripts/blackout-test.py', returnStdout: true)
                     env.PRUEBA = version_numbers
