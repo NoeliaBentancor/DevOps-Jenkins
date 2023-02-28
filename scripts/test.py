@@ -21,7 +21,7 @@ class JsonFormatter(logging.Formatter):
 def configure_logging():
     print(FORMAT_TIMESTAMP)
     dismiss_logs(REQUESTS_LOGS)
-    dismiss_logs(URL_LIB_MODULE)
+    dismiss_logs(2)
     root = logging.getLogger()
     root.setLevel(logging.DEBUG)
     handler = logging.StreamHandler(sys.stdout)
