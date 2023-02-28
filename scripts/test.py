@@ -22,7 +22,7 @@ def configure_logging():
     formatter = JsonFormatter()
     handler.setFormatter(formatter)
     root.addHandler(handler)
-    logging.getLogger('requests').setLevel(logging.CRITICAL)
+    # logging.getLogger('requests').setLevel(logging.CRITICAL)
 
 def test():
         configure_logging()
