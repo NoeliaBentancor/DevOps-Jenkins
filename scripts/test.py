@@ -26,7 +26,7 @@ def configure_logging():
     logging.getLogger('requests').setLevel(logging.CRITICAL)
 
 def test():
-        configure_logging()
+        # configure_logging()
         logging.getLogger('requests').setLevel(logging.WARNING)
 
         print(2)
