@@ -1,11 +1,10 @@
 import os,sys
-PRUEBA= os.getenv("PRUEBA")
 import requests
 import logging
 import json, logging, sys,os
 from datetime import datetime
 FORMAT_TIMESTAMP=os.getenv("FORMAT_TIMESTAMP")
-REQUESTS_LOGS= os.getenv("REQUEST_MODULE")
+REQUESTS_MODULE = os.getenv("REQUESTS_MODULE")
 URL_LIB_MODULE= os.getenv("URL_LIB_MODULE")
 
 class JsonFormatter(logging.Formatter):
@@ -17,11 +16,14 @@ class JsonFormatter(logging.Formatter):
             "message": getattr(record, "msg", None)
         }
         return json.dumps(json_record)
+    
+def dismiss_logs(module):
+      logging.getLogger(module).propagate= False
 
 def configure_logging():
     print(FORMAT_TIMESTAMP)
-    dismiss_logs(REQUESTS_LOGS)
-    dismiss_logs(2)
+    dismiss_logs(REQUESTS_MODULE)
+    dismiss_logs(URL_LIB_MODULE)
     root = logging.getLogger()
     root.setLevel(logging.DEBUG)
     handler = logging.StreamHandler(sys.stdout)
@@ -30,8 +32,7 @@ def configure_logging():
     handler.setFormatter(formatter)
     root.addHandler(handler)
 
-def dismiss_logs(module):
-      logging.getLogger(module).propagate= False
+
       
 
 def test():
