@@ -3,6 +3,8 @@ import requests
 import logging
 import json, logging, sys,os
 from datetime import datetime
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
 FORMAT_TIMESTAMP=os.getenv("FORMAT_TIMESTAMP")
 REQUESTS_MODULE = os.getenv("REQUESTS_MODULE")
 URL_LIB_MODULE= os.getenv("URL_LIB_MODULE")
@@ -58,7 +60,9 @@ def test():
         }
 
         # Send the request
-        response = requests.get(url, headers=headers, data=data)
+        requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
+
+        response = requests.get(url, headers=headers, data=data, verify=False)
         #logs of request
 
         # Check the response status code
