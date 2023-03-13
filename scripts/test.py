@@ -3,8 +3,7 @@ import requests
 import logging
 import json, logging, sys,os
 from datetime import datetime
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
-
+from request_handler import request
 FORMAT_TIMESTAMP=os.getenv("FORMAT_TIMESTAMP")
 REQUESTS_MODULE = os.getenv("REQUESTS_MODULE")
 URL_LIB_MODULE= os.getenv("URL_LIB_MODULE")
