@@ -4,7 +4,6 @@ import logging
 import json, logging, sys,os
 from datetime import datetime
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
-import request
 
 FORMAT_TIMESTAMP=os.getenv("FORMAT_TIMESTAMP")
 REQUESTS_MODULE = os.getenv("REQUESTS_MODULE")
