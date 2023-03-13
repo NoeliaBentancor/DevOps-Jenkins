@@ -60,7 +60,7 @@ def test():
         }
 
         # Send the request
-        requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
+        # requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
         response = requests.get(url, headers=headers, data=data, verify=False)
         #logs of request
