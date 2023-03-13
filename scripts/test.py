@@ -8,6 +8,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 FORMAT_TIMESTAMP=os.getenv("FORMAT_TIMESTAMP")
 REQUESTS_MODULE = os.getenv("REQUESTS_MODULE")
 URL_LIB_MODULE= os.getenv("URL_LIB_MODULE")
+requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
 class JsonFormatter(logging.Formatter):
     def format(self, record):
@@ -60,7 +61,6 @@ def test():
         }
 
         # Send the request
-        # requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
         response = requests.get(url, headers=headers, data=data, verify=False)
         #logs of request
