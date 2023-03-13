@@ -25,7 +25,7 @@ def dismiss_logs(module):
 def configure_logging():
     print(FORMAT_TIMESTAMP)
     dismiss_logs(REQUESTS_MODULE)
-    # dismiss_logs(URL_LIB_MODULE)
+    dismiss_logs(URL_LIB_MODULE)
     root = logging.getLogger()
     root.setLevel(logging.DEBUG)
     handler = logging.StreamHandler(sys.stdout)
